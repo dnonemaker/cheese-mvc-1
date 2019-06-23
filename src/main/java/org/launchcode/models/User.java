@@ -1,9 +1,18 @@
 package org.launchcode.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class User {
 
+    @NotNull
+    @Size(min=3, max=15)
     private String username;
+
+    @NotNull
     private String email;
+
+    @NotNull
     private String password;
 
 

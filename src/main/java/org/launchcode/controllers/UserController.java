@@ -14,6 +14,14 @@ public class UserController {
     @RequestMapping("add")
     public String add(Model model){
 
+        User u = new User();
+        u.setUsername("");
+        u.setEmail("");
+
+        String pwError = "";
+
+        model.addAttribute("user", u);
+        model.addAttribute("pwError", pwError);
         return "user/add";
     }
 
@@ -22,8 +30,13 @@ public class UserController {
 
         if(user.getPassword().equals(verify)){
             model.addAttribute("user", user);
+
             return "user/index";
         }
+
+        String pwError = "Passwords do not match!";
+        model.addAttribute("user", user);
+        model.addAttribute("pwError", pwError);
         return "user/add";
     }
 }

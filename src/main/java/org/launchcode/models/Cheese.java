@@ -3,6 +3,7 @@ package org.launchcode.models;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 /**
  * Created by LaunchCode
  */
